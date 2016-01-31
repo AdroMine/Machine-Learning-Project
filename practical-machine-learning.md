@@ -70,22 +70,14 @@ validation <- df[-inTrain,]
 To select the model, various models were created using random forests, random forests with boosting, logistic regression, linear discriminant analysis, and support vector machines. I will only display the accuracy measures of the different models here (building them all again for the report will take too much time), and the full details of the final model selected after that.    
 
 
----------------------------------------
-Algorithm                      Accuracy
----------------------------- ----------
-Random Forest                    99.54%
-
-Random Forest (with              99.76%
-resampling)                            
-
-Linear Discriminant Analysis     71.37%
-
-gbm (boosted trees)              98.81%
-
-Ridge                            46.56%
-
-Support Vector Machine           99.57%
----------------------------------------
+| Algorithm                       |   Accuracy |
+|:--------------------------------|-----------:|
+| Random Forest                   |     99.54% |
+| Random Forest (with resampling) |     99.76% |
+| Linear Discriminant Analysis    |     71.37% |
+| gbm (boosted trees)             |     98.81% |
+| Ridge                           |     46.56% |
+| Support Vector Machine          |     99.57% |
    
    
 Looking at these results, random forests and support vector machines provide the best results. Further tweaking of these two models lead to a random forest based model providing the best results.   
@@ -206,49 +198,29 @@ pander(data.frame(ID = 1:20,Class = prediction))
 ```
 
 
-------------
- ID   Class 
----- -------
- 1      B   
 
- 2      A   
-
- 3      B   
-
- 4      A   
-
- 5      A   
-
- 6      E   
-
- 7      D   
-
- 8      B   
-
- 9      A   
-
- 10     A   
-
- 11     B   
-
- 12     C   
-
- 13     B   
-
- 14     A   
-
- 15     E   
-
- 16     E   
-
- 17     A   
-
- 18     B   
-
- 19     B   
-
- 20     B   
-------------
+|  ID  |  Class  |
+|:----:|:-------:|
+|  1   |    B    |
+|  2   |    A    |
+|  3   |    B    |
+|  4   |    A    |
+|  5   |    A    |
+|  6   |    E    |
+|  7   |    D    |
+|  8   |    B    |
+|  9   |    A    |
+|  10  |    A    |
+|  11  |    B    |
+|  12  |    C    |
+|  13  |    B    |
+|  14  |    A    |
+|  15  |    E    |
+|  16  |    E    |
+|  17  |    A    |
+|  18  |    B    |
+|  19  |    B    |
+|  20  |    B    |
 
 Using these predictions on the quiz resulted in 20/20.  
 
